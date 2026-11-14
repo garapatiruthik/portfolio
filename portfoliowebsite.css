@@ -11,12 +11,20 @@
 @media(max-width:950px){.navbar{gap:14px}.navbar a{font-size:12px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home{gap:4%}.home h1{font-size:clamp(45px,6vw,65px)}}
 @media(max-width:700px){.header{padding:13px 5%}.menu-toggle{display:flex;flex-direction:column;gap:5px;padding:9px;border:1px solid var(--line);border-radius:7px}.menu-toggle span{width:22px;height:2px;background:var(--text)}.navbar{display:none;position:absolute;top:100%;left:0;right:0;background:#252c36;padding:12px 6% 18px;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line)}.navbar.open{display:flex}.navbar a{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}.home{grid-template-columns:1fr;min-height:auto;padding-top:45px;gap:30px}.home-img{grid-row:1;width:min(68%,330px);justify-self:center}.home-content{grid-row:2}.home h1{font-size:clamp(43px,12vw,62px)}.home h2{font-size:22px}.photo-tag{left:-15px;bottom:18px}.section{padding:65px 6%}.about-grid,.experience-grid,.research-card{grid-template-columns:1fr}.experience-card.featured{grid-column:auto}.project-grid,.skills-grid,.recognition-grid{grid-template-columns:1fr}.project-art{height:180px}.earlier-grid{grid-template-columns:1fr}.research-card{padding:22px}.hero-meta{margin-top:26px}.footer{padding:20px 6%;}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+.project-image{display:block;width:100%;height:100%;object-fit:contain}
+.art-project-name{position:absolute;left:15px;bottom:13px;z-index:2;max-width:calc(100% - 30px);padding:7px 10px;background:rgba(20,33,46,.9);border-left:2px solid var(--accent);font-size:13px;font-weight:600}
+.social-media svg{display:block;width:20px;height:20px}
+.experience-grid{grid-template-columns:1fr;position:relative;padding-left:34px}
+.experience-grid::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(0,238,255,.18))}
+.experience-card{position:relative}
+.experience-card::before{content:"";position:absolute;left:-31px;top:26px;width:12px;height:12px;border:2px solid var(--accent);border-radius:50%;background:var(--panel);box-shadow:0 0 12px var(--glow)}
+.experience-card.featured{grid-column:auto}
 
 
 /* =========================================================
    FINAL POLISH: replayable section entrances + transparent art
    Decorative images are optional. Set either opacity to 0 to hide.
-   Replace the SVG files in assets/images/ with your own transparent
+   Replace the SVG files in the project root with your own transparent
    PNG/WebP illustrations while keeping the same filenames.
    ========================================================= */
 :root{
@@ -52,7 +60,7 @@
   aspect-ratio:1 / 1;
   right:1%;
   bottom:-7%;
-  background:url("assets/images/education-illustration.svg") center / contain no-repeat;
+  background:url("education-illustration.svg") center / contain no-repeat;
   opacity:var(--education-art-opacity);
   pointer-events:none;
   transition:opacity .35s ease, transform .55s ease;
@@ -77,7 +85,7 @@
   height:220px;
   right:-28px;
   top:-38px;
-  background:url("assets/images/research-illustration.svg") center / contain no-repeat;
+  background:url("research-illustration.svg") center / contain no-repeat;
   opacity:var(--research-art-opacity);
   pointer-events:none;
   transition:opacity .4s ease, transform .6s ease;
@@ -122,4 +130,50 @@
     transition:none!important;
   }
   .education-card::after,.research-card::after{transition:none!important}
+}
+
+body{font-size:14px}
+.section{padding-top:72px;padding-bottom:72px}
+.header{padding-top:12px;padding-bottom:12px}
+.logo{font-size:23px}
+.navbar{gap:clamp(14px,2.2vw,30px)}
+.navbar a{font-size:13px}
+.home{min-height:calc(100vh - 60px);padding-top:50px;padding-bottom:36px}
+.home h1{font-size:clamp(42px,5.2vw,68px)}
+.home h2{font-size:clamp(21px,2.4vw,30px)}
+.home-summary{font-size:14px}
+.home-img{width:min(100%,440px)}
+.social-media{gap:12px;margin:22px 0}
+.social-media a{width:40px;height:40px}
+.btn{padding:10px 22px;font-size:13px}
+.section-heading{margin-bottom:28px}
+.section-heading h2{font-size:clamp(27px,3.6vw,41px)}
+.section-summary{font-size:12px}
+.info-card,.experience-card,.skill-card,.recognition-card{padding:22px}
+.info-card h3,.experience-card h3,.skill-card h3,.recognition-card h3{font-size:17px}
+.info-card p,.experience-card p,.recognition-card p{font-size:12px}
+.experience-grid{gap:16px}
+.experience-card h4{font-size:12px}
+.experience-card::before{top:22px}
+.project-grid,.recognition-grid{gap:13px}
+.project-art{height:170px}
+.project-body{padding:16px}
+.project-body h3{font-size:16px}
+.research-card{gap:25px;padding:24px}
+.research-card h3{font-size:clamp(17px,2vw,22px)}
+.research-metrics strong{font-size:21px}
+.skills-grid{gap:13px}
+.skill-card{min-height:140px}
+.recognition-card{min-height:135px}
+.contact h2{font-size:clamp(29px,3.5vw,43px)}
+.contact-content>p:not(.section-kicker):not(.copy-feedback){font-size:12px}
+.footer{padding-top:18px;padding-bottom:18px}
+
+@media(max-width:700px){
+  .section{padding:52px 6%}
+  .home-img{width:min(65%,300px)}
+  .home h1{font-size:clamp(39px,11vw,55px)}
+  .home h2{font-size:20px}
+  .research-card{gap:18px;padding:20px}
+  .about.section.alt::before{right:0;width:180px;height:180px}
 }
