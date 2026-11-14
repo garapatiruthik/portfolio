@@ -142,7 +142,7 @@ body{font-size:14px}
 .home h1{font-size:clamp(42px,5.2vw,68px)}
 .home h2{font-size:clamp(21px,2.4vw,30px)}
 .home-summary{font-size:14px}
-.home-img{width:min(100%,440px)}
+.home-img{width:min(100%,390px)}
 .social-media{gap:12px;margin:22px 0}
 .social-media a{width:40px;height:40px}
 .btn{padding:10px 22px;font-size:13px}
@@ -171,7 +171,7 @@ body{font-size:14px}
 
 @media(max-width:700px){
   .section{padding:52px 6%}
-  .home-img{width:min(65%,300px)}
+  .home-img{width:min(62%,270px)}
   .home h1{font-size:clamp(39px,11vw,55px)}
   .home h2{font-size:20px}
   .research-card{gap:18px;padding:20px}

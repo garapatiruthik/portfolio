@@ -73,7 +73,7 @@
         role.style.opacity = '1';
       }, 220);
 
-    }, 2600);
+    }, 2900);
 
     role.style.transition = 'opacity .22s ease';
   }
