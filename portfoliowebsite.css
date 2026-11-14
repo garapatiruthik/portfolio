@@ -24,7 +24,7 @@
 /* =========================================================
    FINAL POLISH: replayable section entrances + transparent art
    Decorative images are optional. Set either opacity to 0 to hide.
-   Replace the SVG files in the project root with your own transparent
+   Replace the SVG files in assets/images/ with your own transparent
    PNG/WebP illustrations while keeping the same filenames.
    ========================================================= */
 :root{
@@ -60,7 +60,7 @@
   aspect-ratio:1 / 1;
   right:1%;
   bottom:-7%;
-  background:url("education-illustration.svg") center / contain no-repeat;
+  background:url("assets/images/education-illustration.svg") center / contain no-repeat;
   opacity:var(--education-art-opacity);
   pointer-events:none;
   transition:opacity .35s ease, transform .55s ease;
@@ -85,7 +85,7 @@
   height:220px;
   right:-28px;
   top:-38px;
-  background:url("research-illustration.svg") center / contain no-repeat;
+  background:url("assets/images/research-illustration.svg") center / contain no-repeat;
   opacity:var(--research-art-opacity);
   pointer-events:none;
   transition:opacity .4s ease, transform .6s ease;
@@ -177,3 +177,15 @@ body{font-size:14px}
   .research-card{gap:18px;padding:20px}
   .about.section.alt::before{right:0;width:180px;height:180px}
 }
+
+:root{--accent:#2faab7;--glow:rgba(47,170,183,.2)}
+.btn:hover{box-shadow:0 0 20px rgba(47,170,183,.24)}
+.photo-frame{border-color:rgba(47,170,183,.3)}
+.info-card:hover,.experience-card:hover,.skill-card:hover,.recognition-card:hover{box-shadow:0 15px 35px rgba(0,0,0,.2),0 0 12px rgba(47,170,183,.035)}
+.experience-card.featured{border-color:rgba(47,170,183,.22)}
+.experience-card.featured .experience-top{justify-content:flex-start}
+.tag-row span{border-color:rgba(47,170,183,.22);color:#cadde0}
+.experience-card:hover .tag-row span{background:rgba(47,170,183,.07)}
+.filter{border-color:rgba(47,170,183,.24)}
+.experience-grid::before{background:linear-gradient(to bottom,var(--accent),rgba(47,170,183,.18))}
+.about.section.alt::before{border-color:rgba(47,170,183,.08);box-shadow:0 0 0 28px rgba(47,170,183,.018),0 0 0 58px rgba(47,170,183,.012)}
