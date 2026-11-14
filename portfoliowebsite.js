@@ -53,7 +53,6 @@
 
   const roles = [
     'AI/ML Engineer',
-    'LLM Developer',
     'Agentic AI Builder',
     'Research Enthusiast'
   ];
