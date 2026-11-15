@@ -13,6 +13,43 @@
     menuButton?.setAttribute('aria-label', 'Open navigation');
   };
 
+  const themeToggle = document.querySelector('#themeToggle');
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (themeToggle) {
+    if (localStorage.getItem('portfolio-theme') === 'light') {
+      document.documentElement.dataset.theme = 'light';
+    }
+
+    const updateThemeToggle = () => {
+      const isLight = document.documentElement.dataset.theme === 'light';
+
+      const label = `Switch to ${isLight ? 'dark' : 'light'} theme`;
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.title = label;
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+
+      if (themeColor) {
+        themeColor.content = isLight ? '#f4f5f7' : '#0b1322';
+      }
+    };
+
+    updateThemeToggle();
+
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.documentElement.dataset.theme !== 'light';
+
+      if (isLight) {
+        document.documentElement.dataset.theme = 'light';
+      } else {
+        delete document.documentElement.dataset.theme;
+      }
+
+      localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+      updateThemeToggle();
+    });
+  }
+
   menuButton?.addEventListener('click', () => {
     const open = menuButton.getAttribute('aria-expanded') === 'true';
 
